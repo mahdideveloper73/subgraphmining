@@ -3,6 +3,7 @@ import java.util.*;
 import java.io.*;
 import java.lang.*;
 
+import org.apache.commons.io.FileUtils;
 import org.apache.hadoop.mapred.*;
 import org.apache.hadoop.io.*;
 import org.apache.hadoop.conf.Configured;
@@ -21,6 +22,7 @@ public class graphMining extends Configured implements Tool {
 
             return -1;
         }
+        FileUtils.cleanDirectory(new File("sample_data/result/"));
         String output_dir = args[1];
         String minsup = args[2];
 
